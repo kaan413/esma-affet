@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Barışalım mı?</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 100px;
+    }
+    #soru {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    #evet, #hayir {
+      padding: 12px 24px;
+      font-size: 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #evet {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #hayir {
+      background-color: #f44336;
+      color: white;
+    }
+    #mesaj {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ff8080;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="soru">ESMAA Özür dilerim, barışalım mı?</div>
+  <button id="evet">Evet</button>
+  <button id="hayir">Hayır</button>
+  <div id="mesaj"></div>
+
+  <script>
+    const evetBtn = document.getElementById("evet");
+    const hayirBtn = document.getElementById("hayir");
+    const mesajDiv = document.getElementById("mesaj");
+
+    const mesajlar = [
+      "Emin misin?",
+      "Son kararın mı?",
+      "bak içimde kalır?",
+      "Kalbimi kırıyorsun...",
+      "nolurrrr affet.",
+      "bana başka seçenek bırakmadın."
+    ];
+
+    let tik = 0;
+
+    hayirBtn.onclick = () => {
+      if (tik < mesajlar.length) {
+        mesajDiv.textContent = mesajlar[tik];
+        tik++;
+      }
+
+      if (tik === mesajlar.length) {
+        hayirBtn.style.display = "none";
+      }
+    };
+
+    evetBtn.onclick = () => {
+      alert("💖 Teşekkür ederim, barıştık!");
+    };
+  </script>
+
+</body>
+</html>
